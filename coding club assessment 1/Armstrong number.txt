@@ -1,0 +1,23 @@
+For a given 3 digit number, find whether it is armstrong number or not. An Armstrong number of three digits is a number such that the sum of the cubes of its digits is equal to the number itself. Return "Yes" if it is a armstrong number else return "No".
+NOTE: 371 is an Armstrong number since 33 + 73 + 13 = 371
+Expected Time Complexity: O(1)
+Expected Auxiliary Space: O(1)
+
+Constraints:
+100 ≤ n <1000
+
+code:
+#User function Template for python3
+
+class Solution:
+    def armstrongNumber (self, n):
+        # code here 
+        k1=n//100
+        k2=n%100
+        k3=k2//10
+        k4=n%10
+        k=k1**3+k3**3+k4**3
+        if (k==n):
+            return "Yes"
+        else:
+            return "No"

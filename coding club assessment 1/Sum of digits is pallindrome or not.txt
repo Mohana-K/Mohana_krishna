@@ -1,0 +1,46 @@
+Given a number n.Find if the digit sum(or sum of digits) of n is a Palindrome number or not.
+
+Note: A Palindrome number is a number that stays the same when reversed. Example- 121 , 131 , 7 etc.
+
+Example 1:
+
+Input:
+n = 56
+Output: 1
+Explanation:
+The digit sum of 56 is 5+6=11.Since, 11 is a palindrome number.Thus, answer is 1.
+
+Expected Time Complexity: O(log(n))
+Expected Auxillary Space: O(1)
+
+Constraints:
+1 <= n <= 109
+
+code:
+// User function Template for C++
+
+class Solution {
+  public:
+    int isDigitSumPalindrome(int n) {
+        // code here
+        int r,sum=0,temp,rem,rev_sum=0;
+        while (n>0)
+        {
+            r=n%10;
+            sum=sum+r;
+            n=n/10;
+        }
+        temp=sum;
+        while (sum>0){
+            rem=sum%10;
+            rev_sum=rev_sum*10 + rem;
+            sum=sum/10;
+        }
+        if (temp==rev_sum){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+};

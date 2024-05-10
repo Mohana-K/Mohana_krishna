@@ -1,0 +1,36 @@
+You are given an integer N, reverse the digits of given number N, ensuring that the reversed number has no leading zeroes. Return the resulting reversed number.
+
+Example 1:
+
+Input: 200
+Output: 2
+Explanation: By reversing the digts of 
+number, number will change into 2.
+
+Expected Time Complexity: O(Log(N))
+Expected Space Complexity: O(1)
+ 
+
+Constraints:
+1 <= N <= 1015
+
+
+
+
+
+CODE:
+class Solution
+{
+	public:
+		long long int reverse_digit(long long int n)
+		{
+		    // Code here
+		    long long int rev_n=0,r;
+		    while(n>0){
+		        r=n%10;
+		        rev_n=rev_n*10+r;
+		        n=n/10;
+		    }
+		    return rev_n;
+		}
+};

@@ -1,0 +1,22 @@
+Given a single integer N, your task is to find the sum of the square of the first N even natural Numbers.
+ 
+
+Example 1:
+
+Input: 2
+Output: 20
+Explanation: 22 + 42 = 20
+
+Expected Time Complexity: O(1)
+Expected Space Complexity: O(1)
+ 
+
+Constraints:
+1 <= N <= 10000
+
+code:
+class Solution:
+    def sum_of_square_evenNumbers(self, n):
+        # Code here
+        sum=((2*n)*(n+1)*((2*n)+1))//3
+        return sum

@@ -1,0 +1,30 @@
+Given the first 2 terms a1 and a2 of an Arithmetic Series.Find the nth term of the series. 
+
+Example 1:
+
+Input:
+a1 = 2
+a2 = 3
+n = 4
+Output: 5
+Explanation:
+The series is: 2,3,4,5,6....
+Thus,4th term is 5.
+Expected Time Complexity:O(1)
+Expected Auxillary Space:O(1)
+
+Constraints:
+-104 <= a1 , a2 <= 104
+1 <= n <= 104
+
+
+code:
+class Solution {
+  public:
+    int nthTermOfAP(int a1, int a2, int n) {
+        // code here
+        int an;
+        an=a1+(n-1)*(a2-a1);
+        return an;
+    }
+};

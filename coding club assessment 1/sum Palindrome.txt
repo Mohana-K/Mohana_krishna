@@ -1,0 +1,39 @@
+Given a number, reverse it and add it to itself unless it becomes a palindrome or number of iterations becomes more than 5.
+
+Example 1:
+
+Input: n = 23
+Output: 55 
+Explanation: reverse(23) = 32,then 32+23
+= 55 which is a palindrome
+
+Expected Time Complexity: O(n*k),where k<=5.
+Expected Auxiliary Space: O(1)
+
+Constraints:
+1<= n <=104
+
+def isSumPalindrome(self, n):
+        # Function to reverse a number
+        def reverse(n):
+            rev_num = 0
+            while n > 0:
+                rev_num = rev_num * 10 + n % 10
+                n = n // 10
+            return rev_num
+
+        # Function to check if a number is palindrome
+        def isPalindrome(n):
+            return reverse(n) == n
+
+        count = 0
+        # Iterate until the number is a palindrome or count reaches 5
+        while ((isPalindrome(n) == False) and count < 5):
+            k = reverse(n)
+            n += k
+            count += 1
+
+        # Return the final number if it is palindrome, otherwise return -1
+        if isPalindrome(n):
+            return n
+        return -1

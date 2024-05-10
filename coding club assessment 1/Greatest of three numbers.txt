@@ -1,0 +1,28 @@
+Given 3 numbers A, B and C. Find the greatest number among them.
+
+Example 1:
+
+Input: A = 10, B = 3, C = 2
+Output: 10
+Explanation:
+10 is the greatest among the three.
+
+Expected Time Complexity:O(1)
+Expected Auxillary Space:O(1)
+
+
+Constraints:
+-109<=A,B,C<=109
+
+code:
+#User function Template for python3
+
+class Solution:
+    def greatestOfThree(self,A,B,C):
+        #code here
+        if(A>B and A>C):
+            return A
+        elif(B>C):
+            return B
+        else:
+            return C

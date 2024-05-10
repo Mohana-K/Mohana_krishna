@@ -1,0 +1,38 @@
+Given a stream of incoming numbers, find average or mean of the stream at every point.
+
+ 
+
+Example 1:
+
+Input:
+n = 5
+arr[] = {10, 20, 30, 40, 50}
+Output: 10.00 15.00 20.00 25.00 30.00 
+Explanation: 
+10 / 1 = 10.00
+(10 + 20) / 2 = 15.00
+(10 + 20 + 30) / 3 = 20.00
+And so on.
+
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(1)
+
+ 
+
+Constraints:
+1 ≤ n ≤ 105
+1 ≤ arr[i] ≤ 106
+
+code:
+class Solution:
+    def streamAvg(self, arr, n):
+        # code here
+        sum=0
+        a=[]
+        for i in range(n):
+            sum=sum+arr[i]
+            avg=sum/(i+1)
+            a.append(avg)
+        return a
+
+
